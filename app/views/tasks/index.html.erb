@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Hello Index Page</h1>
+  <% @tasks.each do |task| %>
+    <ul id="tasks">
+      <li>
+        <% if task.completed %>
+          <i class="far fa-check-square"></i>
+        <% else %>
+          <i class="fa fa-square-o"></i>
+        <% end %>
+        <%= link_to "#{task.name}", task_path(task.id) %>
+        <%= link_to task_path(task.id), method: :delete, data: { confirm: "Delete #{task.name}?" } do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+      <% end %>
+      </li>
+    </ul>
+  <% end %>
+  <%= link_to "Adicionar Novo", tasks_new_path %>
+</div>
+

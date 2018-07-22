@@ -1,0 +1,6 @@
+<div class="container">
+  <h2><%= @task.name %></h2>
+  <p><%= @task.details %></p>
+  <%= link_to "Editar", tasks_edit_path(@task) %>
+  <%= link_to "Voltar para a Lista", tasks_path %>
+</div>
